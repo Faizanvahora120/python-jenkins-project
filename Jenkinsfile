@@ -3,10 +3,10 @@
 pipeline {
     agent any
 
-    tools {
-        sonarscanner 'sonarscanner'
+    // tools {
+    //     sonarscanner 'sonarscanner'
         
-    }
+    // }
 
 
     environment{
@@ -97,7 +97,7 @@ pipeline {
         stage('Code inspection & quality gate') {
             steps {
                 echo "-=- run code inspection & quality gate -=-"
-                sh "${sonarscannertool} \
+                sh "tool name: 'sonarscanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation' \
                         -Dsonar.projectKey=python-jenkins-project \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://3.145.199.65 \
