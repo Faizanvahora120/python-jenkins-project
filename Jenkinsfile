@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo "-=- preparing project environment -=-"
                 // Python dependencies
-                sh "pip install -r requirements.txt"
+                sh "pip install"
             }
         }
         stage('Compile') {
@@ -22,12 +22,12 @@ pipeline {
             }
         }
 
-        stage('Unit tests') {
-            steps {
-                echo "-=- execute unit tests -=-"
-                sh "nosetests -v test"
-            }
-        }
+        // stage('Unit tests') {
+        //     steps {
+        //         echo "-=- execute unit tests -=-"
+        //         sh "nosetests -v test"
+        //     }
+        // }
 
         // stage('Mutation tests') {
         //     steps {
