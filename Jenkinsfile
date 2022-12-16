@@ -3,9 +3,13 @@
 pipeline {
     agent any
 
+
     environment{
         SONARQUBE_TOKEN = credentials('sonartoken')
+        scannerHome = tool 'sonarscanner4'
+          
     }
+
 
     stages {
         stage('GIT Clone') {
@@ -89,7 +93,7 @@ pipeline {
         stage('Code inspection & quality gate') {
             steps {
                 echo "-=- run code inspection & quality gate -=-"
-                sh "sonar-scanner \
+                sh "${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=python-jenkins-project \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://3.145.199.65:9000 \
