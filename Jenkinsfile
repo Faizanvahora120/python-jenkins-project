@@ -3,10 +3,15 @@
 pipeline {
     agent any
 
+    tools {
+        sonarscannertool 'sonarscanner'
+        
+    }
+
 
     environment{
         SONARQUBE_TOKEN = credentials('sonartoken')
-        scannerHome = tool 'sonarscanner'
+        scannerHome = sonarscannertool
           
     }
 
