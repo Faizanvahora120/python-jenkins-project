@@ -3,10 +3,6 @@
 pipeline {
     agent any
 
-     tools {
-         sonarscanner1 'sonarscanner'
-        
-     }
 
 
     environment{
