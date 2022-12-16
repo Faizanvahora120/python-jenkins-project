@@ -48,12 +48,13 @@ pipeline {
         //         sh "cosmic-ray init config.yml jenkins_session && cosmic-ray --verbose exec jenkins_session && cosmic-ray dump jenkins_session | cr-report"    
         //     }
         // }
-         stage('Build) {
+        
+        stage('Build') {
             steps {
-
                 sh 'mvn build'
             }
-        }
+        }   
+
         stage('Package') {
             steps {
                 echo "-=- packaging project -=-"
