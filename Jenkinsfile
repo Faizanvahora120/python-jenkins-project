@@ -51,12 +51,12 @@ pipeline {
             }
         }
 
-        stage('Build Docker image') {
-            steps {
-                echo "-=- build Docker image -=-"
-                sh "docker build -t restalion/python-jenkins-pipeline:0.1 ."
-            }
-        }
+        // stage('Build Docker image') {
+        //     steps {
+        //         echo "-=- build Docker image -=-"
+        //         sh "docker build -t restalion/python-jenkins-pipeline:0.1 ."
+        //     }
+        // }
 
         // stage('Run Docker image') {
         //     steps {
