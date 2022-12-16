@@ -25,7 +25,7 @@ pipeline {
         stage('Compile') {
             steps {
                 echo "-=- compiling project -=-"
-                sh "python -m compileall ."
+                sh "python3 -m compileall ."
             }
         }
 
