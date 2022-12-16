@@ -10,8 +10,8 @@ pipeline {
     stages {
         stage('GIT Clone') {
             steps {
-                
-                sh "git branch: 'main', credentialsId: 'githublogin', url: 'https://github.com/Faizanvahora120/helloworld-war.git'"
+      
+                git branch: 'main', credentialsId: 'githublogin', url: 'https://github.com/Faizanvahora120/helloworld-war.git'
             }
         }
 
