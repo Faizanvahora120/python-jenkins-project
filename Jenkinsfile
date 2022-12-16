@@ -34,12 +34,12 @@ pipeline {
             }
         }
 
-        stage('Unit tests') {
-            steps {
-                echo "-=- execute unit tests -=-"
-                sh "python3 -m unittest ."
-            }
-        }
+        // stage('Unit tests') {
+        //     steps {
+        //         echo "-=- execute unit tests -=-"
+        //         sh "python3 -m unittest ."
+        //     }
+        // }
 
         // stage('Mutation tests') {
         //     steps {
