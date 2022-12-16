@@ -4,7 +4,7 @@ pipeline {
     agent any
 
     tools {
-        sonarscannertool 'sonarscanner'
+        sonarscanner 'sonarscanner'
         
     }
 
