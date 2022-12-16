@@ -8,6 +8,13 @@ pipeline {
     }
 
     stages {
+        stage('GIT Clone') {
+            steps {
+                
+                sh "git branch: 'main', credentialsId: 'githublogin', url: 'https://github.com/Faizanvahora120/helloworld-war.git'"
+            }
+        }
+
         stage('Environment preparation') {
             steps {
                 echo "-=- preparing project environment -=-"
@@ -22,12 +29,12 @@ pipeline {
             }
         }
 
-        // stage('Unit tests') {
-        //     steps {
-        //         echo "-=- execute unit tests -=-"
-        //         sh "nosetests -v test"
-        //     }
-        // }
+        stage('Unit tests') {
+            steps {
+                echo "-=- execute unit tests -=-"
+                sh "nosetests -v test"
+            }
+        }
 
         // stage('Mutation tests') {
         //     steps {
