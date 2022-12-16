@@ -11,7 +11,7 @@ pipeline {
 
     environment{
         SONARQUBE_TOKEN = credentials('sonartoken')
-        scannerHome = sonarscannertool
+        scannerHome = tools(sonarscannertool)
           
     }
 
