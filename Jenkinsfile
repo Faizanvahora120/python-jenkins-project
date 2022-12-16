@@ -79,12 +79,12 @@ pipeline {
         //     }
         // }
 
-        stage('Dependency vulnerability tests') {
-            steps {
-                echo "-=- run dependency vulnerability tests -=-"
-                sh "safety check"
-            }
-        }
+        // stage('Dependency vulnerability tests') {
+        //     steps {
+        //         echo "-=- run dependency vulnerability tests -=-"
+        //         sh "safety check"
+        //     }
+        // }
 
         stage('Code inspection & quality gate') {
             steps {
