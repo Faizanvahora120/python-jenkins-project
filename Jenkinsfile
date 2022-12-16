@@ -15,7 +15,7 @@ pipeline {
         stage('GIT Clone') {
             steps {
       
-                git branch: 'main', credentialsId: 'githublogin', url: 'https://github.com/Faizanvahora120/helloworld-war.git'
+                git branch: 'main', credentialsId: 'githublogin', url: 'https://github.com/Faizanvahora120/python-jenkins-project.git'
             }
         }
 
