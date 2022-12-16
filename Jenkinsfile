@@ -59,7 +59,7 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 echo "-=- build Docker image -=-"
-                sh 'docker build -t helloworld-jenkins-pipeline .
+                sh 'docker build -t helloworld-jenkins-pipeline .'
                 
             }
         }
