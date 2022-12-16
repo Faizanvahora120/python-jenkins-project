@@ -67,7 +67,7 @@ pipeline {
         stage('Run Docker image') {
             steps {
                 echo "-=- run Docker image -=-"
-                sh "sudo docker run --name helloworld-jenkins-pipeline:${env.BUILD_NUMBER} --d -p 5001:5000 helloword-container"
+                sh "sudo docker run --name helloworld-jenkins-pipeline:${env.BUILD_NUMBER} -d -p 5001:5000 helloword-container"
             }
         }
 
