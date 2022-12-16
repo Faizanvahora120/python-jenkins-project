@@ -11,7 +11,6 @@ pipeline {
 
     environment{
         SONARQUBE_TOKEN = credentials('sonartoken')
-        scannerHome = tools(sonarscannertool)
           
     }
 
@@ -98,7 +97,7 @@ pipeline {
         stage('Code inspection & quality gate') {
             steps {
                 echo "-=- run code inspection & quality gate -=-"
-                sh "${scannerHome}/bin/sonar-scanner \
+                sh "${sonarscannertool} \
                         -Dsonar.projectKey=python-jenkins-project \
                         -Dsonar.sources=. \
                         -Dsonar.host.url=http://3.145.199.65 \
