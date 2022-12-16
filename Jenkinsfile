@@ -59,7 +59,10 @@ pipeline {
         stage('Build Docker image') {
             steps {
                 echo "-=- build Docker image -=-"
-                sh "sudo docker build -t helloworld-jenkins-pipeline:${env.BUILD_NUMBER} ."
+                sh '''
+                sudo su - 
+                sudo docker build -t helloworld-jenkins-pipeline .
+                '''
             }
         }
 
