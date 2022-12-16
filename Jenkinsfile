@@ -34,12 +34,12 @@ pipeline {
             }
         }
 
-        // stage('Unit tests') {
-        //     steps {
-        //         echo "-=- execute unit tests -=-"
-        //         sh "nosetests -v test"
-        //     }
-        // }
+        stage('Unit tests') {
+            steps {
+                echo "-=- execute unit tests -=-"
+                sh "python3 -m unittest ."
+            }
+        }
 
         // stage('Mutation tests') {
         //     steps {
@@ -56,19 +56,19 @@ pipeline {
             }
         }
 
-        // stage('Build Docker image') {
-        //     steps {
-        //         echo "-=- build Docker image -=-"
-        //         sh "docker build -t restalion/python-jenkins-pipeline:0.1 ."
-        //     }
-        // }
+        stage('Build Docker image') {
+            steps {
+                echo "-=- build Docker image -=-"
+                sh "sudo docker build -t helloworld-jenkins-pipeline:${env.BUILD_NUMBER} ."
+            }
+        }
 
-        // stage('Run Docker image') {
-        //     steps {
-        //         echo "-=- run Docker image -=-"
-        //         sh "docker run --name python-jenkins-pipeline --detach --rm --network ci -p 5001:5000 restalion/python-jenkins-pipeline:0.1"
-        //     }
-        // }
+        stage('Run Docker image') {
+            steps {
+                echo "-=- run Docker image -=-"
+                sh "sudo docker run --name helloworld-jenkins-pipeline:${env.BUILD_NUMBER} --d -p 5001:5000 helloword-container"
+            }
+        }
 
         // stage('Integration tests') {
         //     steps {
@@ -114,10 +114,10 @@ pipeline {
         // }
     }
 
-    // post {
-    //     always {
-    //         echo "-=- remove deployment -=-"
-    //         sh "docker stop python-jenkins-pipeline"
-    //     }
-    // }
+    post {
+        always {
+            echo "-=- remove deployment -=-"
+            sh "sudo docker stop python-jenkins-pipeline"
+        }
+    }
 }
