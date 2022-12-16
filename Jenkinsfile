@@ -1,11 +1,7 @@
 #!groovy
 
 pipeline {
-    agent {
-        docker {
-            image 'python:3.7'
-        }
-    }
+    agent any
 
     environment{
         SONARQUBE_TOKEN = credentialsId('sonartoken')
