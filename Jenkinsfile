@@ -15,13 +15,13 @@ pipeline {
             }
         }
 
-        stage('Environment preparation') {
-            steps {
-                echo "-=- preparing project environment -=-"
-                // Python dependencies
-                sh "pip install -r **/requirements.txt"
-            }
-        }
+        // stage('Environment preparation') {
+        //     steps {
+        //         echo "-=- preparing project environment -=-"
+        //         // Python dependencies
+        //         sh "pip install -r **/requirements.txt"
+        //     }
+        // }
         stage('Compile') {
             steps {
                 echo "-=- compiling project -=-"
@@ -29,12 +29,12 @@ pipeline {
             }
         }
 
-        stage('Unit tests') {
-            steps {
-                echo "-=- execute unit tests -=-"
-                sh "nosetests -v test"
-            }
-        }
+        // stage('Unit tests') {
+        //     steps {
+        //         echo "-=- execute unit tests -=-"
+        //         sh "nosetests -v test"
+        //     }
+        // }
 
         // stage('Mutation tests') {
         //     steps {
