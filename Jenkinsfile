@@ -96,7 +96,7 @@ pipeline {
                 sh "${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=python-jenkins-project \
                         -Dsonar.sources=. \
-                        -Dsonar.host.url=http://3.145.199.65:9000 \
+                        -Dsonar.host.url=http://3.145.199.65 \
                         -Dsonar.login=${SONARQUBE_TOKEN}"
             }
         }
