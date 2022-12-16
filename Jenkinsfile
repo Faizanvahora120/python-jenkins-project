@@ -86,12 +86,12 @@ pipeline {
         stage('Code inspection & quality gate') {
             steps {
                 echo "-=- run code inspection & quality gate -=-"
-                sh "sonar-scanner \
-  -Dsonar.projectKey=python-jenkins-project \
-  -Dsonar.sources=. \
-  -Dsonar.host.url=http://3.145.199.65:9000 \
-  -Dsonar.login=${SONARQUBE_TOKEN}
-"
+                sh " sonar-scanner \
+                        -Dsonar.projectKey=python-jenkins-project \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=http://3.145.199.65:9000 \
+                        -Dsonar.login="${SONARQUBE_TOKEN}"
+                    "
             }
         }
 
