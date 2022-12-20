@@ -14,11 +14,12 @@ pipeline {
 
     stages {
         stage('GIT Clone') {
-            steps {
-      
-                git branch: 'main', credentialsId: 'githublogin', url: 'https://github.com/Faizanvahora120/python-jenkins-project.git'
+            steps 
+            {
+                git branch: 'main', credentialsId: 'jenkins-private-key', url: 'git@github.com:Faizanvahora120/helloworld-war.git'           
             }
         }
+
 
         // stage('Environment preparation') {
         //     steps {
