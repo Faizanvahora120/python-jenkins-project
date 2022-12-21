@@ -21,7 +21,7 @@ pipeline {
         stage('GIT init') {
             steps 
             {
-                echo "${BRANCH_NAME}"
+                echo "${env.BRANCH_NAME}"
             }
         }
 
