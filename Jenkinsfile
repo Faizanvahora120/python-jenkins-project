@@ -14,7 +14,7 @@ pipeline {
         stage('GIT Clone') {
             steps 
             {
-                git branch: 'main', credentialsId: 'jenkins-private-key', url: 'git@github.com:Faizanvahora120/helloworld-war.git'           
+                git branch: 'main', credentialsId: 'githublogin', url: 'https://github.com/Faizanvahora120/python-jenkins-project.git'   
             }
         }
 
@@ -25,35 +25,12 @@ pipeline {
             }
         }
 
-
-        // stage('Environment preparation') {
-        //     steps {
-        //         echo "-=- preparing project environment -=-"
-        //         // Python dependencies
-        //         sh "pip install -r **/requirements.txt"
-        //     }
-        // }
         stage('Compile') {
             steps {
                 echo "-=- compiling project -=-"
                 sh "python3 -m compileall ."
             }
         }
-
-        // stage('Unit tests') {
-        //     steps {
-        //         echo "-=- execute unit tests -=-"
-        //         sh "python3 -m unittest ."
-        //     }
-        // }
-
-        // stage('Mutation tests') {
-        //     steps {
-        //         echo "-=- execute mutation tests -=-"
-        //         // initialize mutation testing session
-        //         sh "cosmic-ray init config.yml jenkins_session && cosmic-ray --verbose exec jenkins_session && cosmic-ray dump jenkins_session | cr-report"    
-        //     }
-        // }
         
         stage('Build') {
             steps {
