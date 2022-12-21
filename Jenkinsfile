@@ -3,8 +3,6 @@
 pipeline {
     agent any
 
-
-
     environment{
         SONARQUBE_TOKEN = credentials('sonartoken')
         scannerHome = tool 'sonarscanner'
@@ -17,6 +15,13 @@ pipeline {
             steps 
             {
                 git branch: 'main', credentialsId: 'jenkins-private-key', url: 'git@github.com:Faizanvahora120/helloworld-war.git'           
+            }
+        }
+
+        stage('GIT init') {
+            steps 
+            {
+                echo "${BRANCH_NAME}"
             }
         }
 
